@@ -1,0 +1,286 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0 solid #e5e7eb;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #f8f9fa, #e3e5e8);
+}
+
+/* Container Styles */
+.don {
+    overflow-x: hidden;
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #f5f7fa;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out;
+    transition: all 0.3s ease;
+}
+
+/* Title Styles */
+h1 {
+    color: rgba(31, 41, 55, 1);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.33em;
+    font-size: 2.3rem;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    user-select: none;
+    animation: slideDown 0.8s ease;
+}
+
+h2 {
+    color: #4a5568;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: serif;
+    color: #2b3a42;
+    margin-top: 1rem; /* Space above the h3 */
+    margin-bottom: 0.5rem; /* Space below the h3 */
+}
+
+/* Task List Styles */
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+.task-list > li {
+    display: flex;
+    align-items: center; /* Center-align the content */
+    line-height: 1.6;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0.5rem;
+    border-radius: 10px; /* Rounded corners for the list item */
+    transition: transform 0.2s ease, background-color 0.2s ease; /* Transition for smooth hover effect */
+}
+
+/* Hover Animation for Task List Item */
+.task-list > li:hover {
+    transform: scale(1.02); /* Slightly scale the item */
+}
+
+/* Task Card Styles */
+.task {
+    background-color: #ffffff;
+    color: #007bff;
+    border-radius: 10px;
+    font-size: 1.11rem;
+    padding: 0.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease; /* Transition for the task scaling */
+}
+
+.task-list > li:hover .task {
+    transform: scale(1.03); /* Scale up task card slightly on hover */
+}
+
+/* Icon Style */
+.task-list > li:before {
+    display: inline-block;
+    margin-right: 0.5rem; /* Space between icon and text */
+    font-family: 'Font Awesome 5 Free'; /* Assuming you use Font Awesome for icons */
+    font-weight: 900;
+    font-size: 1.2rem; /* Adjust icon size */
+    color: #007bff; /* Icon color */
+}
+
+
+
+/* Link Styles */
+.temp {
+    position: relative; /* Set position to relative for pseudo-element positioning */
+    color: #0056b3;
+    cursor: pointer;
+    text-decoration: none; /* Remove default underline */
+    transition: color 0.3s ease; /* Color transition */
+}
+
+.temp::after {
+    content: ""; /* Pseudo-element for the underline */
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Positioning the underline */
+    width: 100%;
+    height: 2px; /* Thickness of the underline */
+    background-color: #d9534f; /* Underline color */
+    transform: scaleX(0); /* Initial scale to 0 (invisible) */
+    transition: transform 0.3s ease; /* Underline scale transition */
+}
+
+.temp:hover {
+    color: #d9534f; /* Change text color on hover */
+}
+
+.temp:hover::after {
+    transform: scaleX(1); /* Scale underline to full width on hover */
+}
+
+/* Task Card Styles */
+.task {
+    background-color: #ffffff;
+    color: #007bff;
+    border-radius: 10px;
+    font-size: 1.11rem;
+    padding: 0.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.task-list>.task:before {
+    content: "\f15c";
+}
+.task-list>li:before {
+    display: inline-block;
+    width: 44.8px;
+    text-align: center;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+}
+
+/* Additional Styles */
+.singh, .sharad {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    margin: 1.5rem 0;
+    color: #2f4f4f;
+}
+
+.para1 {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: #333333;
+    font-family: cursive;
+    user-select: none;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+/* Social Links Styles */
+.social-links {
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: center; /* Center align logos */
+}
+
+.social-logo {
+    width: 30px; /* Logo size */
+    height: 30px; /* Logo size */
+    margin: 0 5px;
+    transition: transform 0.2s; /* Smooth hover effect */
+}
+
+.social-logo:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+    .don {
+        width: 95%;
+        padding: 1.5rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .text-lg {
+        font-size: 18px;
+    }
+    .task-list > li {
+        font-size: 1rem;
+    }
+    .singh {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .don {
+        width: 95%;
+        padding: 1rem;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .text-lg {
+        font-size: 16px;
+    }
+    .singh {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .don {
+        width: 90%;
+        padding: 0.8rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .text-lg {
+        font-size: 14px;
+    }
+    .singh {
+        font-size: 1.1rem;
+    }
+    .task {
+        font-size: 0.9rem;
+    }
+    .task-list {
+        padding-inline-start: 20px; /* Ensure padding for the task list */
+    }
+    .para1 {
+        height: 50px;
+        font-size: 1rem;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
